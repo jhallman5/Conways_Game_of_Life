@@ -11,10 +11,17 @@ export default class Board extends React.Component {
       generation: 0,
       boardState: new Array(this.rows).fill(new Array(this.cols).fill(false))
     }
+    this.selectCell = this.selectCell.bind(this);
+  }
+
+  selectCell(row, col) {
+    let nextBoard = JSON.parse(JSON.stringify(this.state.boardState))
+    nextBoard[row][col] = !nextBoard[row][col]
+    this.setState({ boardState: nextBoard })
   }
 
   render(){
-    const width = this.cols * 16
+    const width = this.cols * 16 
     const boardArr = []
 
     for(let i = 0; i < this.rows; i++){
@@ -28,6 +35,7 @@ export default class Board extends React.Component {
             id={cellId}
             row={i}
             col={j}
+            selectCell={this.selectCell}
           />
         )
       }
