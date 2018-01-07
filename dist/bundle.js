@@ -27184,7 +27184,7 @@ var Options = function (_React$Component) {
         ),
         _react2.default.createElement(
           'h3',
-          null,
+          { className: 'generations' },
           'Generations: ',
           this.props.generations
         )

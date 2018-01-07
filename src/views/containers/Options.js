@@ -25,7 +25,7 @@ export default class Options extends React.Component {
           <Button type={this.play} description="Play"/>
           <Button type={this.stop} description="Stop"/>
         </ButtonGroup>
-        <h3>Generations: {this.props.generations}</h3>
+        <h3 className="generations">Generations: {this.props.generations}</h3>
       </div>
     )
   }
