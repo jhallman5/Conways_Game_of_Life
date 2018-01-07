@@ -8997,6 +8997,10 @@ var _Board = __webpack_require__(189);
 
 var _Board2 = _interopRequireDefault(_Board);
 
+var _Instructions = __webpack_require__(342);
+
+var _Instructions2 = _interopRequireDefault(_Instructions);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -9008,7 +9012,8 @@ var App = function App() {
       null,
       'Conway\'s Game of Life'
     ),
-    _react2.default.createElement(_Board2.default, null)
+    _react2.default.createElement(_Board2.default, null),
+    _react2.default.createElement(_Instructions2.default, null)
   );
 };
 
@@ -38945,6 +38950,86 @@ var Button = function Button(props) {
 };
 
 exports.default = Button;
+
+/***/ }),
+/* 340 */,
+/* 341 */,
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Instructions = function (_React$Component) {
+  _inherits(Instructions, _React$Component);
+
+  function Instructions() {
+    _classCallCheck(this, Instructions);
+
+    return _possibleConstructorReturn(this, (Instructions.__proto__ || Object.getPrototypeOf(Instructions)).apply(this, arguments));
+  }
+
+  _createClass(Instructions, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Rules of the Game'
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Any live cell with fewer than two live neighbours dies, as if caused by underpopulation'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Any live cell with two or three live neighbours lives on to the next generation.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Any live cell with more than three live neighbours dies, as if by overpopulation.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.'
+        ),
+        _react2.default.createElement('br', null)
+      );
+    }
+  }]);
+
+  return Instructions;
+}(_react2.default.Component);
+
+exports.default = Instructions;
 
 /***/ })
 /******/ ]);
