@@ -30,7 +30,7 @@ export default class Board extends React.Component {
       let nextBoard = JSON.parse(JSON.stringify(this.state.boardState))
       for (let i = 0; i < this.rows; i++) {
         for (let j = 0; j < this.cols; j++) {
-          let count = 0 // Counting the living neighbors
+          let count = 0 // Count the living neighbors
           if(i > 0 && j > 0){
             if(currentState[i-1][j-1]) count++
           }
@@ -61,7 +61,10 @@ export default class Board extends React.Component {
           if(!currentState[i][j] && count === 3) nextBoard[i][j] = true
         }
       }
-      this.setState({ boardState: nextBoard})
+      this.setState({
+        generation: this.state.generation + 1,
+        boardState: nextBoard
+      })
     }, this.speed)
   }
 
@@ -95,6 +98,7 @@ export default class Board extends React.Component {
         <Options
           play={this.play}
           stop={this.stop}
+          generations={this.state.generation}
           />
         <div className="center board" style={{width: width}}>
           {boardArr}

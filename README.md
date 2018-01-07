@@ -9,4 +9,6 @@ ExpressJS server
 Create game board  
 Create box component  
 Write game logic  
-Write tests  
+Write tests
+
+Options component could probably be refactored 

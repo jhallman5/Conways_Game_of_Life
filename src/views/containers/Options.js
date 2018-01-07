@@ -13,15 +13,20 @@ export default class Options extends React.Component {
   play(){
     this.props.play()
   }
+
   stop(){
     this.props.stop()
   }
+
   render(){
     return(
-      <ButtonGroup className="center">
-        <Button type={this.play} description="Play"/>
-        <Button type={this.stop} description="Stop"/>
-      </ButtonGroup>
+      <div>
+        <ButtonGroup className="center">
+          <Button type={this.play} description="Play"/>
+          <Button type={this.stop} description="Stop"/>
+        </ButtonGroup>
+        <h3>Generations: {this.props.generations}</h3>
+      </div>
     )
   }
 }

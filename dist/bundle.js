@@ -26973,7 +26973,7 @@ var Board = function (_React$Component) {
         var nextBoard = JSON.parse(JSON.stringify(_this2.state.boardState));
         for (var i = 0; i < _this2.rows; i++) {
           for (var j = 0; j < _this2.cols; j++) {
-            var count = 0; // Counting the living neighbors
+            var count = 0; // Count the living neighbors
             if (i > 0 && j > 0) {
               if (currentState[i - 1][j - 1]) count++;
             }
@@ -27004,7 +27004,10 @@ var Board = function (_React$Component) {
             if (!currentState[i][j] && count === 3) nextBoard[i][j] = true;
           }
         }
-        _this2.setState({ boardState: nextBoard });
+        _this2.setState({
+          generation: _this2.state.generation + 1,
+          boardState: nextBoard
+        });
       }, this.speed);
     }
   }, {
@@ -27038,7 +27041,8 @@ var Board = function (_React$Component) {
         null,
         _react2.default.createElement(_Options2.default, {
           play: this.play,
-          stop: this.stop
+          stop: this.stop,
+          generations: this.state.generation
         }),
         _react2.default.createElement(
           'div',
@@ -27170,10 +27174,20 @@ var Options = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _reactBootstrap.ButtonGroup,
-        { className: 'center' },
-        _react2.default.createElement(_Button2.default, { type: this.play, description: 'Play' }),
-        _react2.default.createElement(_Button2.default, { type: this.stop, description: 'Stop' })
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.ButtonGroup,
+          { className: 'center' },
+          _react2.default.createElement(_Button2.default, { type: this.play, description: 'Play' }),
+          _react2.default.createElement(_Button2.default, { type: this.stop, description: 'Stop' })
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Generations: ',
+          this.props.generations
+        )
       );
     }
   }]);
@@ -39020,6 +39034,24 @@ var Instructions = function (_React$Component) {
           'h3',
           null,
           'Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h1',
+          null,
+          'How to Play'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Click any cell to toggle it\'s livelihood'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Click play and watch life unfold before your eyes'
         ),
         _react2.default.createElement('br', null)
       );
