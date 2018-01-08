@@ -1,0 +1,43 @@
+body {
+  background-image: url(https://hdwallsource.com/img/2014/9/black-wallpaper-15467-15939-hd-wallpapers.jpg)
+}
+
+.cell {
+  display: inline-block;
+  border: 1px solid black;
+  width: 15px;
+  height: 15px;
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+
+.cell:hover {
+  background-color: #00CCFF;
+}
+
+.dead {
+  background: #3e4551;
+}
+
+.alive {
+  background: #acea1c;
+}
+
+.center {
+  margin: auto;
+  display: table;
+  margin-top: 10px;
+}
+
+.board {
+  line-height: 0;
+  margin-top: 20px;
+}
+
+h1, h2, h3, h4 {
+  color: #acea1c;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  margin-top: 10px;
+}
