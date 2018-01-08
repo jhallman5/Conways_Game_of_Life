@@ -7,6 +7,16 @@ Install dependencies
 npm i
 ```
 
+To run tests
+```
+npm test
+```
+
+To start the app
+```
+npm start
+```
+
 The app is now running on localhost:3000
 
 ## Cool Features to Work on
