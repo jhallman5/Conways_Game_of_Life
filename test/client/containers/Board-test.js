@@ -3,14 +3,13 @@ import React from 'react'
 import { expect } from 'chai'
 import Enzyme, { shallow, mount } from 'enzyme'
 import Board from '../../../src/views/containers/Board'
-
 import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() })
 
 const wrapper = shallow(<Board />)
 const component = mount(<Board />)
-const speed = 150 //TODO this only works due to hard coded this.speed at 100 
+const speed = 150 //TODO this only works due to hard coded this.speed at 100
 
 describe('Board', () => {
   beforeEach(() => {
