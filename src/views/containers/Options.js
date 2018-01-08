@@ -1,6 +1,5 @@
 import React from 'react'
-import { ButtonGroup } from 'react-bootstrap';
-
+import { ButtonGroup } from 'react-bootstrap'
 import Button from '../components/Button'
 
 export default class Options extends React.Component {

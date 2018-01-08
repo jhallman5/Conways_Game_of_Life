@@ -3,7 +3,7 @@ import React from 'react'
 import { expect } from 'chai'
 import Enzyme, { shallow, mount } from 'enzyme'
 import Board from '../../../src/views/containers/Board'
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -25,8 +25,8 @@ describe('Board', () => {
       expect(component.state().growing).to.be.false
       component.instance().play()
       setTimeout(() => {
-          expect(component.state().growing).to.be.true
-          done()
+        expect(component.state().growing).to.be.true
+        done()
       }, speed)
     })
     it('stop()', () => {
@@ -59,8 +59,8 @@ describe('Board', () => {
         nextBoard[0][0] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[0][0]).to.be.false
-            done()
+          expect(component.state().boardState[0][0]).to.be.false
+          done()
         }, speed)
       })
       it('Bottom Right Corner', (done) => {
@@ -69,8 +69,8 @@ describe('Board', () => {
         nextBoard[29][49] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[29][49]).to.be.false
-            done()
+          expect(component.state().boardState[29][49]).to.be.false
+          done()
         }, speed)
       })
       it('Center', (done) => {
@@ -92,8 +92,8 @@ describe('Board', () => {
         nextBoard[0][0] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[0][0]).to.be.true
-            done()
+          expect(component.state().boardState[0][0]).to.be.true
+          done()
         }, speed)
       })
       it('Bottom Right Corner', (done) => {
@@ -103,8 +103,8 @@ describe('Board', () => {
         nextBoard[29][49] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[29][49]).to.be.true
-            done()
+          expect(component.state().boardState[29][49]).to.be.true
+          done()
         }, speed)
       })
       it('Center', (done) => {
@@ -128,8 +128,8 @@ describe('Board', () => {
         nextBoard[0][0] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[0][0]).to.be.true
-            done()
+          expect(component.state().boardState[0][0]).to.be.true
+          done()
         }, speed)
       })
       it('Bottom Right Corner', (done) => {
@@ -140,8 +140,8 @@ describe('Board', () => {
         nextBoard[29][49] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[29][49]).to.be.true
-            done()
+          expect(component.state().boardState[29][49]).to.be.true
+          done()
         }, speed)
       })
       it('Center', (done) => {
@@ -167,8 +167,8 @@ describe('Board', () => {
         nextBoard[0][19] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[0][19]).to.be.false
-            done()
+          expect(component.state().boardState[0][19]).to.be.false
+          done()
         }, speed)
       })
       it('Bottom', (done) => {
@@ -180,8 +180,8 @@ describe('Board', () => {
         nextBoard[29][45] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[29][45]).to.be.false
-            done()
+          expect(component.state().boardState[29][45]).to.be.false
+          done()
         }, speed)
       })
       it('Left', (done) => {
@@ -193,8 +193,8 @@ describe('Board', () => {
         nextBoard[0][3] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[0][3]).to.be.false
-            done()
+          expect(component.state().boardState[0][3]).to.be.false
+          done()
         }, speed)
       })
       it('right', (done) => {
@@ -206,8 +206,8 @@ describe('Board', () => {
         nextBoard[4][49] = true
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[2][2]).to.be.false
-            done()
+          expect(component.state().boardState[2][2]).to.be.false
+          done()
         }, speed)
       })
       it('Center', (done) => {
@@ -233,8 +233,8 @@ describe('Board', () => {
         nextBoard[0][0] = false
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[0][0]).to.be.true
-            done()
+          expect(component.state().boardState[0][0]).to.be.true
+          done()
         }, speed)
       })
       it('Bottom Right Corner', (done) => {
@@ -245,8 +245,8 @@ describe('Board', () => {
         nextBoard[29][49] = false
         component.setState({ boardState: nextBoard })
         setTimeout(() => {
-            expect(component.state().boardState[29][49]).to.be.true
-            done()
+          expect(component.state().boardState[29][49]).to.be.true
+          done()
         }, speed)
       })
       it('Center', (done) => {

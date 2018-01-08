@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
 import Board from './containers/Board'
 import Instructions from './components/Instructions'
 

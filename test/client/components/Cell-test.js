@@ -2,7 +2,7 @@ import React from 'react'
 import { expect } from 'chai'
 import Enzyme, { shallow } from 'enzyme'
 import Cell from '../../../src/views/components/Cell'
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({ adapter: new Adapter() })
 

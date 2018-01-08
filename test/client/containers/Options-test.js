@@ -2,8 +2,7 @@ import React from 'react'
 import { expect } from 'chai'
 import Enzyme, { shallow } from 'enzyme'
 import Options from '../../../src/views/containers/Options'
-
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -33,7 +32,6 @@ describe('Options', () => {
     it('Displays Generations', () => {
       expect(wrapper.find('.generations').length).equal(1)
       expect(wrapper.instance().props.generations).to.equal(17)
-
     })
   })
 })

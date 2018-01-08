@@ -26975,7 +26975,7 @@ var Board = function (_React$Component) {
           var nextBoard = JSON.parse(JSON.stringify(_this2.state.boardState));
           for (var i = 0; i < _this2.rows; i++) {
             for (var j = 0; j < _this2.cols; j++) {
-              var count = 0; // Count the living neighbors
+              var count = 0; // Counts the living neighbors
               if (i > 0 && j > 0) {
                 if (currentState[i - 1][j - 1]) count++;
               }
@@ -27000,9 +27000,7 @@ var Board = function (_React$Component) {
               if (i < _this2.rows - 1 && j < _this2.cols - 1) {
                 if (currentState[i + 1][j + 1]) count++;
               }
-              if (currentState[i][j]) {
-                if (count < 2 || count > 3) nextBoard[i][j] = false;
-              }
+              if (currentState[i][j] && (count < 2 || count > 3)) nextBoard[i][j] = false;
               if (!currentState[i][j] && count === 3) nextBoard[i][j] = true;
             }
           }
@@ -27029,7 +27027,6 @@ var Board = function (_React$Component) {
     value: function render() {
       var width = this.cols * 16;
       var boardArr = [];
-
       for (var i = 0; i < this.rows; i++) {
         for (var j = 0; j < this.cols; j++) {
           var cellId = i + '_' + j;
