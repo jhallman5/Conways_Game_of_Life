@@ -14,7 +14,10 @@ const speed = 150 //TODO this only works due to hard coded this.speed at 100
 describe('Board', () => {
   beforeEach(() => {
     let nextBoard = new Array(30).fill(new Array(50).fill(false))
-    component.setState({ boardState: nextBoard })
+    component.setState({
+      growing: false,
+      boardState: nextBoard
+    })
   })
   it('renders', () => {
     expect(wrapper.length).equal(1)
