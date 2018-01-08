@@ -11,4 +11,5 @@ Create box component
 Write game logic  
 Write tests
 
-Options component could probably be refactored 
+Options component could probably be refactored
+nyc doesn't play nice like setTimeout 

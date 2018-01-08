@@ -26947,6 +26947,7 @@ var Board = function (_React$Component) {
     _this.cols = 50;
     _this.speed = 100;
     _this.state = {
+      growing: false,
       generation: 0,
       boardState: new Array(_this.rows).fill(new Array(_this.cols).fill(false))
     };
@@ -26968,52 +26969,60 @@ var Board = function (_React$Component) {
     value: function play() {
       var _this2 = this;
 
-      this.interval = setInterval(function () {
-        var currentState = _this2.state.boardState;
-        var nextBoard = JSON.parse(JSON.stringify(_this2.state.boardState));
-        for (var i = 0; i < _this2.rows; i++) {
-          for (var j = 0; j < _this2.cols; j++) {
-            var count = 0; // Count the living neighbors
-            if (i > 0 && j > 0) {
-              if (currentState[i - 1][j - 1]) count++;
+      if (!this.state.growing) {
+        this.interval = setInterval(function () {
+          var currentState = _this2.state.boardState;
+          var nextBoard = JSON.parse(JSON.stringify(_this2.state.boardState));
+          for (var i = 0; i < _this2.rows; i++) {
+            for (var j = 0; j < _this2.cols; j++) {
+              var count = 0; // Count the living neighbors
+              if (i > 0 && j > 0) {
+                if (currentState[i - 1][j - 1]) count++;
+              }
+              if (i > 0) {
+                if (currentState[i - 1][j]) count++;
+              }
+              if (i > 0 && j < _this2.cols - 1) {
+                if (currentState[i - 1][j + 1]) count++;
+              }
+              if (j > 0) {
+                if (currentState[i][j - 1]) count++;
+              }
+              if (j < _this2.cols - 1) {
+                if (currentState[i][j + 1]) count++;
+              }
+              if (i < _this2.rows - 1 && j > 0) {
+                if (currentState[i + 1][j - 1]) count++;
+              }
+              if (i < _this2.rows - 1) {
+                if (currentState[i + 1][j]) count++;
+              }
+              if (i < _this2.rows - 1 && j < _this2.cols - 1) {
+                if (currentState[i + 1][j + 1]) count++;
+              }
+              if (currentState[i][j]) {
+                if (count < 2 || count > 3) nextBoard[i][j] = false;
+              }
+              if (!currentState[i][j] && count === 3) nextBoard[i][j] = true;
             }
-            if (i > 0) {
-              if (currentState[i - 1][j]) count++;
-            }
-            if (i > 0 && j < _this2.cols - 1) {
-              if (currentState[i - 1][j + 1]) count++;
-            }
-            if (j > 0) {
-              if (currentState[i][j - 1]) count++;
-            }
-            if (j < _this2.cols - 1) {
-              if (currentState[i][j + 1]) count++;
-            }
-            if (i < _this2.rows - 1 && j > 0) {
-              if (currentState[i + 1][j - 1]) count++;
-            }
-            if (i < _this2.rows - 1) {
-              if (currentState[i + 1][j]) count++;
-            }
-            if (i < _this2.rows - 1 && j < _this2.cols - 1) {
-              if (currentState[i + 1][j + 1]) count++;
-            }
-            if (currentState[i][j]) {
-              if (count < 2 || count > 3) nextBoard[i][j] = false;
-            }
-            if (!currentState[i][j] && count === 3) nextBoard[i][j] = true;
           }
-        }
-        _this2.setState({
-          generation: _this2.state.generation + 1,
-          boardState: nextBoard
-        });
-      }, this.speed);
+          _this2.setState({
+            growing: true,
+            generation: _this2.state.generation + 1,
+            boardState: nextBoard
+          });
+        }, this.speed);
+      }
     }
   }, {
     key: 'stop',
     value: function stop() {
-      clearInterval(this.interval);
+      if (this.state.growing) {
+        clearInterval(this.interval);
+        this.setState({
+          growing: false
+        });
+      }
     }
   }, {
     key: 'render',

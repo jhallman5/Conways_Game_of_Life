@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack && node ./src/controllers/server.js",
-    "test": "nyc mocha --compilers js:babel-core/register ./test/**/*-test.js"
+    "test": "nyc mocha --compilers js:babel-core/register ./test/**/*-test.js "
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,8 @@
     "chai": "^4.1.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "jsdom": "^11.5.1",
+    "jsdom-global": "^3.0.2",
     "mocha": "^4.1.0",
     "nyc": "^11.4.1"
   }
